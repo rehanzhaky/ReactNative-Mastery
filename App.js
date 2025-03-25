@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
-import {Image, Text, TextInput, View} from 'react-native';
+import {Image, StyleSheet, Text, TextInput, View} from 'react-native';
+import ayamtaliwang from '../BelajarNative/ayamtaliwang.png';
 
 // Functional Component
 const App = () => {
   return (
     <View>
+      {/* Pemanggilan Functional Component Ayam Taliwang */}
+      <AyamTaliwang />
+      {/* Implementasi StyleSheet */}
+      <ImplementasiStyleSheet />
       <Text>Text 1</Text>
       {/* Pemanggilan Functional Component Implementasi Text */}
       <ImplementasiText />
@@ -19,6 +24,98 @@ const App = () => {
     </View>
   );
 };
+
+// Awal dari Contoh Project nyata sekaligus implementasi style sheet
+const AyamTaliwang = () => {
+  return (
+    <View
+      style={{
+        backgroundColor: 'red',
+        borderTopStartRadius: 20,
+        borderTopEndRadius: 20,
+      }}>
+      <Text style={StyleTextAyam.text}>Ayam Taliwang</Text>
+      <Text style={StyleTextRp.text}>Rp. 35k / Porsi</Text>
+      <Text style={StyleTextPhotos.text}>Photos</Text>
+      <Image style={StyleImage.image} source={ayamtaliwang} />
+      <View
+        style={{
+          backgroundColor: '#EFA00B',
+          marginTop: 36.46,
+          marginLeft: 34,
+          marginRight: 24.15,
+          borderRadius: 17,
+          marginBottom: 37.38,
+        }}>
+        <Text
+          style={{
+            fontWeight: 'medium',
+            fontSize: 18,
+            color: 'white',
+            textAlign: 'center',
+            paddingVertical: 10,
+            paddingHorizontal: 85,
+          }}>
+          Explore Now
+        </Text>
+      </View>
+    </View>
+  );
+};
+
+// Penerapan Style Sheet untuk teks Ayam Taliwang
+const StyleTextAyam = StyleSheet.create({
+  text: {
+    fontSize: 22,
+    fontWeight: 'medium',
+    color: '#000000',
+    paddingTop: 51,
+    paddingLeft: 22,
+  },
+});
+
+const StyleTextRp = StyleSheet.create({
+  text: {
+    paddingLeft: 22,
+  },
+});
+
+const StyleTextPhotos = StyleSheet.create({
+  text: {
+    paddingLeft: 22,
+    paddingTop: 35.54,
+    paddingBottom: 11,
+  },
+});
+
+// Akhir dari Contoh Project nyata sekaligus implementasi style sheet
+const StyleImage = StyleSheet.create({
+  image: {
+    marginLeft: 22,
+    borderRadius: 20,
+  },
+});
+
+// Functional Componenent untuk menerapkan design dari Style Sheet
+const ImplementasiStyleSheet = () => {
+  return (
+    <View>
+      <Text style={StylesImplementasiStyleSheet.text}>
+        Ini adalah contoh implementasi text
+      </Text>
+    </View>
+  );
+};
+
+// bentuk implementasi style menggunakan style sheet
+const StylesImplementasiStyleSheet = StyleSheet.create({
+  text: {
+    fontSize: 16,
+    fontStyle: 'italic',
+    fontWeight: 'bold',
+    marginBottom: '20',
+  },
+});
 
 // Buat functional component baru, implementasi Text
 // Bisa dengan shortcut 'rfce'
