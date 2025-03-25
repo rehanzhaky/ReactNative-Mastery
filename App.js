@@ -1,16 +1,15 @@
 import React, {Component} from 'react';
-import {Image, StyleSheet, Text, TextInput, View} from 'react-native';
+import {Image, ScrollView, StyleSheet, Text, TextInput, View} from 'react-native';
 import ayamtaliwang from '../BelajarNative/ayamtaliwang.png';
+import ImplementasiStyleSheet from './ImplementasiStyleSheet';
 
 // Functional Component
 const App = () => {
   return (
-    <View>
-      {/* Pemanggilan Functional Component Ayam Taliwang */}
-      <AyamTaliwang />
+    <ScrollView>
+      <View>
       {/* Implementasi StyleSheet */}
       <ImplementasiStyleSheet />
-      <Text>Text 1</Text>
       {/* Pemanggilan Functional Component Implementasi Text */}
       <ImplementasiText />
       {/* Pemanggilan Functional Component Implementasi Style */}
@@ -21,7 +20,11 @@ const App = () => {
       <ImplementasiTextInput />
       {/* Pemanggilan Class Component, Implementasi Class Component */}
       <PhotoProfile />
+      {/* Pemanggilan Functional Component Ayam Taliwang */}
+      <AyamTaliwang />
     </View>
+    </ScrollView>
+    
   );
 };
 
@@ -93,27 +96,6 @@ const StyleImage = StyleSheet.create({
   image: {
     marginLeft: 22,
     borderRadius: 20,
-  },
-});
-
-// Functional Componenent untuk menerapkan design dari Style Sheet
-const ImplementasiStyleSheet = () => {
-  return (
-    <View>
-      <Text style={StylesImplementasiStyleSheet.text}>
-        Ini adalah contoh implementasi text
-      </Text>
-    </View>
-  );
-};
-
-// bentuk implementasi style menggunakan style sheet
-const StylesImplementasiStyleSheet = StyleSheet.create({
-  text: {
-    fontSize: 16,
-    fontStyle: 'italic',
-    fontWeight: 'bold',
-    marginBottom: '20',
   },
 });
 
